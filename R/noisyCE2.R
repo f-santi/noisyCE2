@@ -43,7 +43,8 @@
 #' @param verbose algorithm verbosity (values `v`, `vv` and `vvv` are admitted).
 #' @param what type of plot should be drawn. If `what = "x"` (default), values
 #'   of the variables are plotted as time series; if `what = "gam"`, time series
-#'   of statistics \eqn{\gamma} is plotted.
+#'   of statistics \eqn{\gamma} is plotted; if `what = "param"`, time series of
+#'   parameters of the sampling distributions are plotted.
 #' @param start,end first and last value to be plotted. If `NULL`, all values are
 #'   plotted.
 #'
@@ -107,7 +108,7 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
   convCode <- -2
   
   # Cross-entropy algorithm
-  while((convCode != 0) & (n <= maxiter)) {
+  while((convCode != 0) & (n < maxiter)) {
   	
     # Update the counter
     n %<>% add(1)
@@ -221,24 +222,24 @@ plot.noisyCE2 <- function(x, what = c('x', 'gam', 'param'),
   what %<>% match.arg(c('x', 'gam', 'param'))
   
   if (what == 'x') {
-  	stats::ts(x$hxopt, 1) %>%
-  	  stats::window(start, end) %>%
-  	  stats::plot.ts(...)
+    stats::ts(x$hxopt, 1) %>%
+      stats::window(start, end) %>%
+      stats::plot.ts(...)
   }
   if (what == 'gam') {
-  	stats::ts(x$gam, 1) %>%
-  	  stats::window(start, end) %>%
-  	  stats::plot.ts(...)
+    stats::ts(x$gam, 1) %>%
+      stats::window(start, end) %>%
+      stats::plot.ts(...)
   }
   if (what == 'param') {
-  	for(j in 1:length(x$param)) {
-  	  colnames(x$param[[j]]) %<>% paste0(names(x$param)[j], '_', .)
-  	}
-  	x$param %>%
-  	  Reduce(cbind, .) %>%
-  	  stats::ts(0) %>%
-  	  stats::window(start, end) %>%
-  	  stats::plot.ts(...)
+    for(j in 1:length(x$param)) {
+      colnames(x$param[[j]]) %<>% paste0(names(x$param)[j], '_', .)
+    }
+    x$param %>%
+      Reduce(cbind, .) %>%
+      stats::ts(0) %>%
+      stats::window(start, end) %>%
+      stats::plot.ts(...)
   }
   
   invisible(NULL)
