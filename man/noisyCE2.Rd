@@ -67,7 +67,8 @@ of \code{f} is performed.}
 
 \item{what}{type of plot should be drawn. If \code{what = "x"} (default), values
 of the variables are plotted as time series; if \code{what = "gam"}, time series
-of statistics \eqn{\gamma} is plotted.}
+of statistics \eqn{\gamma} is plotted; if \code{what = "param"}, time series of
+parameters of the sampling distributions are plotted.}
 
 \item{start, end}{first and last value to be plotted. If \code{NULL}, all values are
 plotted.}

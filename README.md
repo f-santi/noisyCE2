@@ -10,7 +10,7 @@ The package `noisyCE2` implements the cross-entropy algorithm
 deterministic and noisy functions through a highly flexible and
 customisable function which allows user to define custom variable
 domains, sampling distributions, updating and smoothing rules, and
-stopping criteria. Several built-in methods and settings makes the
+stopping criteria. Several built-in methods and settings make the
 package very easy-to-use under standard optimisation problems.
 
 ## Three examples
