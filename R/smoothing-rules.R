@@ -10,6 +10,9 @@
 #' @param xt `numeric` vector of past values of the parameter (time series).
 #' @param a smoothing parameter \eqn{a}.
 #'
+#' @return
+#' A `numeric` vector of updated parameters.
+#'
 #' @family smoothing rules
 #'
 #' @export
@@ -30,6 +33,8 @@ smooth_lin <- function(x, xt, a) {
 #' @inheritParams smooth_lin
 #' @param b smoothing parameter \eqn{b}.
 #' @param qu smoothing parameter \eqn{q}.
+#'
+#' @inherit smooth_lin return
 #'
 #' @family smoothing rules
 #'

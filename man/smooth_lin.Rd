@@ -13,6 +13,9 @@ smooth_lin(x, xt, a)
 
 \item{a}{smoothing parameter \eqn{a}.}
 }
+\value{
+A \code{numeric} vector of updated parameters.
+}
 \description{
 Linear smoothing rule
 \deqn{x_{t+1}:=a\,x_t + (1-a)\,x_{t-1}}

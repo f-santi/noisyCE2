@@ -15,6 +15,9 @@ smooth_dec(x, xt, b, qu)
 
 \item{qu}{smoothing parameter \eqn{q}.}
 }
+\value{
+A \code{numeric} vector of updated parameters.
+}
 \description{
 Decreasing smoothing rule
 \deqn{x_{t+1}:=a_t\,x_t + (1-a_t)\,x_{t-1}}

@@ -24,7 +24,7 @@
 #' Springer, New York.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # EXAMPLE 1
 #' # The negative 4-dimensional paraboloid can be maximised as follows:
 #' negparaboloid <- function(x) { -sum((x - (1:4))^2) }
