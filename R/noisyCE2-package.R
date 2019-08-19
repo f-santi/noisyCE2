@@ -5,7 +5,7 @@
 #' functions through a highly flexible and customisable function which allows
 #' user to define custom variable domains, sampling distributions, updating and
 #' smoothing rules, and stopping criteria. Several built-in methods and settings
-#' makes the package very easy-to-use under standard optimisation problems.
+#' make the package very easy-to-use under standard optimisation problems.
 #'
 #'
 #' The package permits a noisy function to be maximised by means of the
