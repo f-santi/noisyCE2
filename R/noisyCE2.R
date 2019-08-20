@@ -81,7 +81,7 @@
 #' @export
 noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
   smooth = NULL,
-  stopwindow = tail(gam, n * (n > 20)), stoprule = ts_change(x),
+  stopwindow = tail(gam, (n > 20) * n / 2), stoprule = ts_change(x),
   maxiter = 1000, maximise = TRUE, verbose = 'v') {
   
   # Redefine the objective function including the other parameters
