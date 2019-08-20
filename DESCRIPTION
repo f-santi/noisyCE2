@@ -2,7 +2,7 @@ Package: noisyCE2
 Type: Package
 Title: Cross-Entropy Optimisation of Noisy Functions
 Date: 2019-08-15
-Version: 1.0.0
+Version: 1.0.0.9000
 Authors@R: 
     person(given = "Flavio",
            family = "Santi",
