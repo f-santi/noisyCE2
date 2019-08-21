@@ -5,7 +5,8 @@
 
 ## Major changes
 
-* 
+* Redefined the default value of argument `stopwindow` of function `noisyCE`
+  according to Bee et al. (2017).
 
 
 ## Minor changes
