@@ -64,7 +64,7 @@ Computational and Graphical Statistics}, \strong{26} (3), pp. 695-708.
 \url{https://doi.org/10.1080/10618600.2016.1278003}
 
 Rubinstein, R. Y., and Kroese, D. P. (2004), \emph{The Cross-Entropy Method},
-Springer, New York.
+Springer, New York. ISBN: 978-1-4419-1940-3
 }
 \seealso{
 Useful links:
