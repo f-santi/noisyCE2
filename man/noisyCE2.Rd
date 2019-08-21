@@ -69,7 +69,7 @@ of \code{f} is performed.}
 
 \item{verbose}{algorithm verbosity (values \code{v}, \code{vv} and \code{vvv} are admitted).}
 
-\item{x}{object of class \code{noisyCE2}, as returned by \code{noisyCE2}.}
+\item{x, object}{object of class \code{noisyCE2}, as returned by \code{noisyCE2}.}
 
 \item{what}{type of plot should be drawn. If \code{what = "x"} (default), values
 of the variables are plotted as time series; if \code{what = "gam"}, time series
@@ -99,6 +99,7 @@ through function \code{noisyCEcontrol}).}
 \item{code}{convergence code of the algorithm. Value \code{0} means that algorithm
 has converged; other values are defined according to the stopping rule.}
 \item{convMess}{textual message associated to the convergence code (if any).}
+\item{compTime}{computation time of the optimisation.}
 }
 \description{
 Unconstraint optimisation of noisy functions through the cross-entropy
