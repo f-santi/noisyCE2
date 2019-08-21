@@ -3,7 +3,9 @@
 \name{noisyCE2}
 \alias{noisyCE2}
 \alias{print.noisyCE2}
+\alias{summary.noisyCE2}
 \alias{plot.noisyCE2}
+\alias{coef.noisyCE2}
 \title{Cross-Entropy Optimisation of Noisy Functions}
 \usage{
 noisyCE2(f, domain, ..., rho = 0.05, N = 1000, smooth = NULL,
@@ -12,8 +14,12 @@ noisyCE2(f, domain, ..., rho = 0.05, N = 1000, smooth = NULL,
 
 \method{print}{noisyCE2}(x, ...)
 
+\method{summary}{noisyCE2}(object, ...)
+
 \method{plot}{noisyCE2}(x, what = c("x", "gam", "param"), start = NULL,
   end = NULL, ...)
+
+\method{coef}{noisyCE2}(object, ...)
 }
 \arguments{
 \item{f}{objective function which takes the vector of optimisation variables
@@ -102,7 +108,11 @@ algorithm.
 \itemize{
 \item \code{print}: display synthetic information about a \code{noisyCE2} object
 
+\item \code{summary}: display summary information about a \code{noisyCE2} object
+
 \item \code{plot}: plot various components of a \code{noisyCE2} object
+
+\item \code{coef}: get the solution of the optimisation
 }}
 
 \examples{

@@ -214,6 +214,14 @@ print.noisyCE2 <- function(x, ...) {
 
 
 
+#' @describeIn noisyCE2 display summary information about a `noisyCE2` object
+#' @export
+summary.noisyCE2 <- function(object, ...) {
+  print(object, ...)
+}
+
+
+
 #' @describeIn noisyCE2 plot various components of a `noisyCE2` object
 #' @export
 plot.noisyCE2 <- function(x, what = c('x', 'gam', 'param'),
@@ -246,5 +254,11 @@ plot.noisyCE2 <- function(x, what = c('x', 'gam', 'param'),
 }
 
 
+
+#' @describeIn noisyCE2 get the solution of the optimisation
+#' @export
+coef.noisyCE2 <- function(object, ...) {
+  object$xopt
+}
 
 

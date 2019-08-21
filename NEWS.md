@@ -11,7 +11,7 @@
 
 ## Minor changes
 
-* 
+* Added methods `summary` and `coef` for `S3` class `noisyCE2`.
 
 
 ## Typos and other marginal changes

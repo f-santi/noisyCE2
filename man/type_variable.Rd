@@ -67,7 +67,7 @@ type_real(
 )
 
 # Define a new type of real variable whith different smoothing
-#parameters:
+# parameters:
 type_real(
   type = 'real3', 
   smooth = list(
