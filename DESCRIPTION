@@ -21,7 +21,9 @@ Description: Cross-Entropy optimisation of unconstrained deterministic and noisy
     methods and settings make the package very easy-to-use under standard
     optimisation problems.
 Imports: magrittr
-Suggests: coda
+Suggests: 
+    coda,
+    testthat
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true

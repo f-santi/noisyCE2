@@ -12,11 +12,13 @@
 ## Minor changes
 
 * Added methods `summary` and `coef` for `S3` class `noisyCE2`.
+* Added recordings of computation times for `noisyCE2`.
+* Included `testthat` among suggested packages.
 
 
 ## Typos and other marginal changes
 
-* 
+* Completed references information.
 
 
 
