@@ -99,7 +99,7 @@ through function \code{noisyCEcontrol}).}
 \item{code}{convergence code of the algorithm. Value \code{0} means that algorithm
 has converged; other values are defined according to the stopping rule.}
 \item{convMess}{textual message associated to the convergence code (if any).}
-\item{compTime}{computation time of the optimisation.}
+\item{compTimes}{named vector computation times of each phase.}
 }
 \description{
 Unconstraint optimisation of noisy functions through the cross-entropy

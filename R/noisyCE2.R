@@ -68,7 +68,7 @@
 #' \item{code}{convergence code of the algorithm. Value `0` means that algorithm
 #'   has converged; other values are defined according to the stopping rule.}
 #' \item{convMess}{textual message associated to the convergence code (if any).}
-#' \item{compTime}{computation time of the optimisation.}
+#' \item{compTimes}{named vector computation times of each phase.}
 #'
 #' @examples
 #' library(magrittr)
@@ -86,7 +86,7 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
   maxiter = 1000, maximise = TRUE, verbose = 'v') {
   
   # Read date and time
-  t0 <- Sys.time()
+  compTimes <- Sys.time()
   
   # Redefine the objective function including the other parameters
   fobj <- function(x) { (2 * maximise - 1) * f(x, ...) }
@@ -112,6 +112,8 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
   convCode <- -2
   
   # Cross-entropy algorithm
+  compTimes %<>% c(Sys.time())
+  
   while((convCode != 0) & (n < maxiter)) {
   	
     # Update the counter
@@ -162,6 +164,8 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
     }
   }
   
+  compTimes %<>% c(Sys.time())
+  
   if((convCode != 0) & (n >= maxiter)) {
   	convCode <- -1
   	attr(convCode, 'convMess') <- 'the maximum number of iterations has been reached'
@@ -192,11 +196,17 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
   
   vhist %<>% set_names(namesX)
   
+  #
+  compTimes %<>%
+    c(Sys.time()) %>%
+    diff %>%
+    set_names(c('Initialisation', 'Optimisation', 'Preparing output'))
+  
   # Output
   list(
     f = f, fobj = fobj, xopt = xopt, hxopt = hxopt, param = vhist,
     gam = unname(gam), niter = n, code = convCode, convMess = mess,
-    compTime = Sys.time() - t0
+    compTimes = compTimes
   ) %>%
     structure(class = 'noisyCE2') %>%
     return
@@ -211,12 +221,12 @@ print.noisyCE2 <- function(x, ...) {
   cat('--------------------------------------\n')
   cat('Status               :', x$convMess, '\n')
   cat('Computation time     :', 
-    format(unclass(x$compTime), digits = 4),
+    format(unclass(sum(x$compTime)), digits = 4),
     attr(x$compTime, 'units'), '\n'
   )
   cat('Number of iterations :', x$niter, '\n')
   cat('Time per iteration   :',
-    format(unclass(x$compTime / x$niter), digits = 4),
+    format(unclass(sum(x$compTime) / x$niter), digits = 4),
     attr(x$compTime / x$niter, 'units'), '\n'
   )
   cat('Last gamma value     :', tail(x$gam, 1), '\n')
