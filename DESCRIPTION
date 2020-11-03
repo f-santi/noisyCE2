@@ -1,8 +1,7 @@
 Package: noisyCE2
 Type: Package
 Title: Cross-Entropy Optimisation of Noisy Functions
-Date: 2019-08-15
-Version: 1.0.0.9000
+Version: 1.0.1.9000
 Authors@R: 
     person(given = "Flavio",
            family = "Santi",
@@ -12,7 +11,7 @@ Authors@R:
 Author: Flavio Santi [cre, aut] (<https://orcid.org/0000-0002-2014-1981>)
 Maintainer: Flavio Santi <flavio.santi@univr.it>
 URL: https://www.flaviosanti.it/software/noisyCE2
-BugReports: https://github.com/f-santi/noisyCE2
+BugReports: https://github.com/f-santi/noisyCE2/issues
 Description: Cross-Entropy optimisation of unconstrained deterministic and noisy
     functions illustrated in Rubinstein and Kroese (2004, ISBN:
     978-1-4419-1940-3) through a highly flexible and customisable function which 
@@ -28,4 +27,4 @@ License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
