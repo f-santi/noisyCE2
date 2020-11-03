@@ -37,16 +37,16 @@
 #'   stopped whether or not the stopping criterion is satisfied. If the maximum
 #'   number of iteration is reached, the `code` and the `message` components of
 #'   `noisyCE` object are overwritten.
-#' @param maximise if `TRUE` (default) `f` is maximised, otherwise a minimisation
-#'   of `f` is performed.
+#' @param maximise if `TRUE` (default) `f` is maximised, otherwise a
+#'   minimisation of `f` is performed.
 #' @param x,object object of class `noisyCE2`, as returned by `noisyCE2`.
 #' @param verbose algorithm verbosity (values `v`, `vv` and `vvv` are admitted).
 #' @param what type of plot should be drawn. If `what = "x"` (default), values
 #'   of the variables are plotted as time series; if `what = "gam"`, time series
 #'   of statistics \eqn{\gamma} is plotted; if `what = "param"`, time series of
 #'   parameters of the sampling distributions are plotted.
-#' @param start,end first and last value to be plotted. If `NULL`, all values are
-#'   plotted.
+#' @param start,end first and last value to be plotted. If `NULL`, all values
+#'   are plotted.
 #'
 #' @return
 #' An object of class `noisyCE2` structured as a list with the following
@@ -94,7 +94,7 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
   # Save variable names
   namesX <- names(domain)
   if (is.null(namesX)) {
-  	namesX <- paste0('X', 1:length(domain))
+  	namesX <- paste0('X', seq_along(domain))
   }
   
   # Define the block of variables
@@ -263,7 +263,7 @@ plot.noisyCE2 <- function(x, what = c('x', 'gam', 'param'),
       stats::plot.ts(...)
   }
   if (what == 'param') {
-    for(j in 1:length(x$param)) {
+    for(j in seq_along(x$param)) {
       colnames(x$param[[j]]) %<>% paste0(names(x$param)[j], '_', .)
     }
     x$param %>%
