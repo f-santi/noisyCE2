@@ -1,6 +1,6 @@
 
 
-# noisyCE2 1.0.0.9000
+# noisyCE2 1.1.0
 
 
 ## Major changes
@@ -19,6 +19,7 @@
 ## Typos and other marginal changes
 
 * Completed references information.
+* Corrected syntax on `return`.
 
 
 
