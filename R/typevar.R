@@ -111,7 +111,7 @@ type_positive <- function(...) {
     type = 'positive',
     init = c(0, 10),
     randomXj = function(n, v) { rlnorm(n, v[1], v[2]) },
-    x2v = function(x) { log(x) %>% { c(mean(.), sd(.)) } %>% return },
+    x2v = function(x) { log(x) %>% { c(mean(.), sd(.)) } %>% return() },
     v2x = function(v) { exp(v[1] + 0.5 * v[2]^2) }
   ) %>%
     # Include user's changes
@@ -137,7 +137,7 @@ type_negative <- function(...) {
     type = 'negative',
     init = c(0, 10),
     randomXj = function(n, v) { -rlnorm(n, v[1], v[2]) },
-    x2v = function(x) { log(-x) %>% { c(mean(.), sd(.)) } %>% return },
+    x2v = function(x) { log(-x) %>% { c(mean(.), sd(.)) } %>% return() },
     v2x = function(v) { -exp(v[1] + 0.5 * v[2]^2) }
   ) %>%
     # Include user's changes

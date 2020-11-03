@@ -24,7 +24,7 @@ statmob<- function(x, k = 10, f = mean, ...) {
 cumstat<- function(x, f, ...) {
   lapply(1:length(x), function(j) f(x[1:j], ...)) %>%
     unlist %>%
-    return
+    return()
 }
 
 

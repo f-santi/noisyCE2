@@ -209,7 +209,7 @@ noisyCE2 <- function(f, domain, ..., rho = 0.05, N = 1000,
     compTimes = compTimes
   ) %>%
     structure(class = 'noisyCE2') %>%
-    return
+    return()
 }
 
 

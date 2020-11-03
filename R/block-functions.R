@@ -21,7 +21,7 @@ generate_block <- function(domain, ...) {
       return(x)
     }) %>%
     structure(class = 'blockvar') %>%
-    return
+    return()
 }
 
 
